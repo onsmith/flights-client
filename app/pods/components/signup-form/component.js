@@ -9,27 +9,42 @@ export default Component.extend({
   ajax: service(),
 
   isSubmitting: false,
+  isShowingSuccessMessage: false,
 
   errorMessage: '',
-  hasErrorMessage: notEmpty('errorMessage'),
+  isShowingErrorMessage: notEmpty('errorMessage'),
 
   signup(username, password) {
     return this.get('ajax').post('/users', {
-      user: { username, password },
+      data: {
+        user: { username, password },
+      },
     });
+  },
+
+  clearForm() {
+    this.set('username', '');
+    this.set('password', '');
   },
 
   actions: {
     signupFormWasSubmitted() {
       this.set('isSubmitting', true);
       this.set('errorMessage', '');
+      this.set('isShowingSuccessMessage', false);
 
-      this.signup().then(() => {
+      this.signup(this.username, this.password).then(() => {
+        this.set('isShowingSuccessMessage', true);
+        this.clearForm();
         if (this.userWasCreated) {
           this.userWasCreated();
         }
       }).catch(reason => {
-        this.set('errorMessage', reason);
+        if (reason.payload && reason.payload.exception) {
+          this.set('errorMessage', reason.payload.exception);
+        } else {
+          this.set('errorMessage', reason);
+        }
       }).finally(() => {
         this.set('isSubmitting', false);
       });

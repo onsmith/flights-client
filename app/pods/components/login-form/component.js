@@ -26,7 +26,13 @@ export default Component.extend({
           this.userLoggedIn();
         }
       }).catch(reason => {
-        this.set('errorMessage', reason);
+        if (reason.status == 401) {
+          this.set('errorMessage', "Incorrect username or password.");
+        } else if (reason.payload && reason.payload.exception) {
+          this.set('errorMessage', reason.payload.exception);
+        } else {
+          this.set('errorMessage', reason);
+        }
       }).finally(() => {
         this.set('isSubmitting', false);
       });

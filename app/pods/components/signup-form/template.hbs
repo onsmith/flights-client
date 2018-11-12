@@ -2,8 +2,18 @@
   Flights API New User
 </h1>
 
-{{#if hasErrorMessage}}
-  <p class="text-danger">{{errorMessage}}</p>
+{{#if isShowingSuccessMessage}}
+  <p class="text-success">
+    <strong>
+      User successfully created.
+    </strong>
+  </p>
+{{/if}}
+
+{{#if isShowingErrorMessage}}
+  <p class="text-danger">
+    {{errorMessage}}
+  </p>
 {{/if}}
 
 <form class="signup-form" {{action "signupFormWasSubmitted" on="submit"}}>

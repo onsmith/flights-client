@@ -1,0 +1,40 @@
+body {
+  background-color: white;
+  color: #333;
+}
+
+.primary-content {
+  background-color: white;
+  overflow: hidden;
+
+  /* Mobile layout */
+  width: 100%;
+  padding: 1em;
+}
+
+@media(min-width: 30em) {
+  body {
+    background-color: rgb(31, 181, 201);
+  }
+
+  .primary-content {
+    width:  30em;
+    height: 35em;
+    position: absolute;
+    top:0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.primary-title {
+  text-align: center;
+  font-size: 2em;
+  margin: 0.5em 0.5em 1em 0.5em;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,40 @@
+<h1 class="primary-title">
+  Flights API New User
+</h1>
+
+{{#if hasErrorMessage}}
+  <p class="text-danger">{{errorMessage}}</p>
+{{/if}}
+
+<form class="signup-form" {{action "signupFormWasSubmitted" on="submit"}}>
+  <div class="form-group">
+    <label for="signup-form-username">Username</label>
+    {{input
+      type="text"
+      class="form-control"
+      id="signup-form-username"
+      placeholder="Enter your desired username"
+      value=username
+    }}
+  </div>
+  <div class="form-group">
+    <label for="signup-form-password">Password</label>
+    {{input
+      type="password"
+      class="form-control"
+      id="signup-form-password"
+      placeholder="Enter your desired password"
+      value=password
+    }}
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-info btn-lg btn-block" disabled={{isSubmitting}}>
+      Sign Up
+    </button>
+
+    <p class="text-center mt-3">
+      {{link-to "Or click here to go back to the signup page." "index"}}
+    </p>
+  </div>
+</form>

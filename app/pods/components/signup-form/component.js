@@ -1,6 +1,7 @@
 import { inject as service } from '@ember/service';
 import { notEmpty } from '@ember/object/computed';
 import Component from '@ember/component';
+import { isBadRequestError } from 'ember-ajax/errors';
 
 export default Component.extend({
   tagName: 'section',
@@ -39,11 +40,13 @@ export default Component.extend({
         if (this.userWasCreated) {
           this.userWasCreated();
         }
-      }).catch(reason => {
-        if (reason.payload && reason.payload.exception) {
-          this.set('errorMessage', reason.payload.exception);
+      }).catch(error => {
+        if (isBadRequestError(error)) {
+          this.set('errorMessage', 'Username and password are required fields.');
+        } else if (error.payload && error.payload.exception) {
+          this.set('errorMessage', error.payload.exception);
         } else {
-          this.set('errorMessage', reason);
+          this.set('errorMessage', error);
         }
       }).finally(() => {
         this.set('isSubmitting', false);

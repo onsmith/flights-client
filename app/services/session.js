@@ -9,15 +9,16 @@ export default Service.extend({
   isAuthenticated: notEmpty('data'),
 
   authenticate(username, password) {
-    const data = { username, password };
     return this.get('ajax').post('/sessions', {
-      data: { user: data },
+      data: { user: { username, password } },
     }).then(() => {
-      this.set('data', data);
+      this.set('data', { username });
     });
   },
 
   invalidate() {
-    return this.get('ajax').del('/sessions');
+    return this.get('ajax').del('/sessions').then(() => {
+      this.set('data', null);
+    });
   },
 });

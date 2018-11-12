@@ -1,6 +1,7 @@
 import { inject as service } from '@ember/service';
 import { notEmpty } from '@ember/object/computed';
 import Component from '@ember/component';
+import { isBadRequestError, isUnauthorizedError } from 'ember-ajax/errors';
 
 export default Component.extend({
   tagName: 'section',
@@ -23,15 +24,17 @@ export default Component.extend({
         this.password
       ).then(() => {
         if (this.userWasLoggedIn) {
-          this.userLoggedIn();
+          this.userWasLoggedIn();
         }
-      }).catch(reason => {
-        if (reason.status == 401) {
-          this.set('errorMessage', "Incorrect username or password.");
-        } else if (reason.payload && reason.payload.exception) {
-          this.set('errorMessage', reason.payload.exception);
+      }).catch(error => {
+        if (isBadRequestError(error)) {
+          this.set('errorMessage', 'Username and password are required fields.');
+        } else if (isUnauthorizedError(error)) {
+          this.set('errorMessage', 'Incorrect username or password.');
+        } else if (error.payload && error.payload.exception) {
+          this.set('errorMessage', error.payload.exception);
         } else {
-          this.set('errorMessage', reason);
+          this.set('errorMessage', error);
         }
       }).finally(() => {
         this.set('isSubmitting', false);

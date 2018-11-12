@@ -3,7 +3,7 @@ body {
   color: #333;
 }
 
-.primary-content {
+.one-form-page-wrapper {
   background-color: white;
   overflow: hidden;
 
@@ -17,7 +17,7 @@ body {
     background-color: rgb(31, 181, 201);
   }
 
-  .primary-content {
+  .one-form-page-wrapper {
     width:  30em;
     height: 35em;
     position: absolute;
@@ -27,12 +27,6 @@ body {
     border-radius: 10px;
     box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.15);
   }
-}
-
-.primary-title {
-  text-align: center;
-  font-size: 2em;
-  margin: 0.5em 0.5em 1em 0.5em;
 }
 
 .hidden {

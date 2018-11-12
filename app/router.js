@@ -7,8 +7,12 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  // Authentication
   this.route('signup');
   this.route('login');
+
+  // Resources
+  this.route('airlines');
 });
 
 export default Router;

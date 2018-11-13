@@ -1,0 +1,45 @@
+{{#if isInCreateMode}}
+  {{airline/create-form record}}
+
+{{else if isInUpdateMode}}
+  {{airline/update-form record onCancel=(action (mut mode) "read")}}
+
+{{else if isInReadMode}}
+  <p class="record-field">
+    <span class="record-field-key">id:</span>
+    <span class="record-field-value">{{record.id}}</span>
+  </p>
+  <p class="record-field">
+    <span class="record-field-key">name:</span>
+    <span class="record-field-value">"{{record.name}}"</span>
+  </p>
+  <p class="record-field">
+    <span class="record-field-key">logo_url:</span>
+    <span class="record-field-value">"{{record.logo_url}}"</span>
+  </p>
+  <p class="record-field">
+    <span class="record-field-key">info:</span>
+    <span class="record-field-value">"{{record.info}}"</span>
+  </p>
+  <p class="record-field">
+    <span class="record-field-key">user_id:</span>
+    <span class="record-field-value">{{record.user_id}}</span>
+  </p>
+  <p class="record-field">
+    <span class="record-field-key">created_at:</span>
+    <span class="record-field-value">"{{record.created_at}}"</span>
+  </p>
+  <p class="record-field">
+    <span class="record-field-key">updated_at:</span>
+    <span class="record-field-value">"{{record.updated_at}}"</span>
+  </p>
+  <p class="record-controls mt-3">
+    <button type="button" class="btn btn-primary" {{action "editButtonWasPressed"}}>
+      <i class="far fa-edit"></i>&nbsp; Edit
+    </button>
+
+    <button type="button" class="btn btn-danger" {{action "deleteButtonWasPressed"}}>
+      <i class="fas fa-times"></i>&nbsp; Delete
+    </button>
+  </p>
+{{/if}}

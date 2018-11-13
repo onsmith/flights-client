@@ -1,0 +1,47 @@
+.record-section {
+  border-left: 0.4em solid rgb(31, 181, 201);
+  background-color: lighten(desaturate(rgb(31, 181, 201), 58), 45);
+  padding: 0.3em 0.6em;
+  margin: 0.8em 0;
+  border-radius: 0 7px 7px 0;
+
+  @extend .noselect;
+
+  &:hover {
+    background-color: lighten(desaturate(rgb(31, 181, 201), 58), 50);
+  }
+}
+
+.record-field {
+  font-size: 1.1em;
+  margin: 0.3em 0;
+}
+
+.record-field-icon {
+  color: rgb(31, 181, 201);
+  vertical-align: middle;
+}
+
+.record-field-key {
+  display: inline-block;
+  margin-left: 0.5em;
+  text-align: right;
+  font-weight: 500;
+
+  @media(min-width: 35em) {
+    width: 9em;
+  }
+}
+
+.record-field-value {
+  display: inline-block;
+  margin-left: 0.3em;
+}
+
+.record-controls {
+  text-align: center;
+
+  @media(min-width: 35em) {
+    text-align: right;
+  }
+}

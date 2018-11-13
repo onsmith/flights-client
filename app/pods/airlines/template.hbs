@@ -1,10 +1,10 @@
 <main class="airlines-page content-card full-page-max-width">
-  <h1>
+  <h1 class="mt-3 mb-3">
     Airlines
-    <small class="text-muted">Resource Page</small>
+    <small class="text-muted d-none d-sm-inline">Resource Page</small>
   </h1>
 
   {{#each airlines as |airline|}}
-    {{airline/resource-manager airline}}
+    {{airline/record-manager airline}}
   {{/each}}
 </main>

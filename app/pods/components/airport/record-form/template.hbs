@@ -1,0 +1,82 @@
+<table class="record-table">
+  <tbody>
+    {{#unless record.isNew}}
+      <tr class="record-field">
+        <td class="record-key">id:</td>
+        <td class="record-value">{{record.id}}</td>
+      </tr>
+    {{/unless}}
+    <tr class="record-field">
+      <td class="record-key">name:</td>
+      <td class="record-value">
+        {{input class="form-control" value=record.name placeholder="(this field is required)"}}
+      </td>
+    </tr>
+    <tr class="record-field">
+      <td class="record-key">code:</td>
+      <td class="record-value">
+        {{input class="form-control" value=record.code placeholder="(this field is required)"}}
+      </td>
+    </tr>
+    <tr class="record-field">
+      <td class="record-key">latitude:</td>
+      <td class="record-value">
+        {{input class="form-control" value=record.latitude}}
+      </td>
+    </tr>
+    <tr class="record-field">
+      <td class="record-key">longitude:</td>
+      <td class="record-value">
+        {{input class="form-control" value=record.longitude}}
+      </td>
+    </tr>
+    <tr class="record-field">
+      <td class="record-key">city:</td>
+      <td class="record-value">
+        {{input class="form-control" value=record.city}}
+      </td>
+    </tr>
+    <tr class="record-field">
+      <td class="record-key">state:</td>
+      <td class="record-value">
+        {{input class="form-control" value=record.state}}
+      </td>
+    </tr>
+    <tr class="record-field">
+      <td class="record-key">city_url:</td>
+      <td class="record-value">
+        {{input class="form-control" value=record.city_url}}
+      </td>
+    </tr>
+    <tr class="record-field">
+      <td class="record-key">info:</td>
+      <td class="record-value">
+        {{textarea class="form-control" value=record.info}}
+      </td>
+    </tr>
+    {{#unless record.isNew}}
+      <tr class="record-field">
+        <td class="record-key">user_id:</td>
+        <td class="record-value">{{record.user_id}}</td>
+      </tr>
+      <tr class="record-field">
+        <td class="record-key">created_at:</td>
+        <td class="record-value">"{{record.created_at}}"</td>
+      </tr>
+      <tr class="record-field">
+        <td class="record-key">updated_at:</td>
+        <td class="record-value">"{{record.updated_at}}"</td>
+      </tr>
+    {{/unless}}
+  </tbody>
+</table>
+
+<p class="record-controls mt-3">
+  <button type="button" class="btn btn-info" {{action "saveButtonWasPressed"}}>
+    <i class="far fa-save"></i>&nbsp; Save
+  </button>
+
+  <button type="button" class="btn btn-secondary" {{action "cancelButtonWasPressed"}}>
+    <i class="fas fa-times"></i>&nbsp; Cancel
+  </button>
+</p>

@@ -10,7 +10,7 @@ export default Controller.extend({
 
   actions: {
     createButtonWasPressed() {
-      this.get('store').createRecord('airline');
+      this.get('store').createRecord('flight');
     },
   },
 });

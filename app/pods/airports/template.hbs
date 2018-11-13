@@ -1,6 +1,6 @@
-<main class="airlines-page content-card full-page-max-width">
+<main class="airports-page content-card full-page-max-width">
   <h1 class="mt-3 mb-3">
-    Airlines
+    Airports
     <small class="text-muted d-none d-sm-inline">Resource Page</small>
   </h1>
 
@@ -12,8 +12,8 @@
   </p>
 
   {{#each records as |record|}}
-    {{airline/record-manager record}}
+    {{airport/record-manager record}}
   {{else}}
-    <h4 class="text-muted text-center font-italic mb-4 mt-4">Your database currently has no airlines.</h4>
+    <h4 class="text-muted text-center font-italic mb-4 mt-4">Your database currently has no airports.</h4>
   {{/each}}
 </main>

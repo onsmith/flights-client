@@ -13,6 +13,13 @@ Router.map(function() {
 
   // Resources
   this.route('airlines');
+  this.route('airports');
+  this.route('flights');
+  this.route('instances');
+  this.route('itineraries');
+  this.route('planes');
+  this.route('seats');
+  this.route('tickets');
 });
 
 export default Router;

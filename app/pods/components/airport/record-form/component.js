@@ -6,14 +6,12 @@ const MyComponent = Component.extend({
 
   actions: {
     saveButtonWasPressed() {
-      this.record.save();
       if (this.onSave) {
         this.onSave();
       }
     },
 
     cancelButtonWasPressed() {
-      this.record.rollbackAttributes();
       if (this.onCancel) {
         this.onCancel();
       }

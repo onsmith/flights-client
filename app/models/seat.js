@@ -2,8 +2,13 @@ import DS from 'ember-data';
 import { computed } from '@ember/object';
 
 export default DS.Model.extend({
-  name:       DS.attr('string'), // required
-  logo_url:   DS.attr('string'),
+  plane_id:   DS.attr('number'), // required
+  row:        DS.attr('number'), // required
+  number:     DS.attr('string'), // required
+  cabin:      DS.attr('string'),
+  is_window:  DS.attr('boolean'),
+  is_aisle:   DS.attr('boolean'),
+  is_exit:    DS.attr('boolean'),
 
   info:       DS.attr('string'),
   user_id:    DS.attr('number'),

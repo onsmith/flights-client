@@ -12,30 +12,19 @@
   }
 }
 
-.record-field {
-  font-size: 1.1em;
-  margin: 0.3em 0;
+.record-table {
+  width: 100%;
 }
 
-.record-field-icon {
-  color: rgb(31, 181, 201);
-  vertical-align: middle;
-}
-
-.record-field-key {
-  display: inline-block;
-  margin-left: 0.5em;
+.record-key {
   text-align: right;
-  font-weight: 500;
-
-  @media(min-width: 35em) {
-    width: 9em;
-  }
+  padding: 0.3em 0.5em;
+  font-weight: bold;
 }
 
-.record-field-value {
-  display: inline-block;
-  margin-left: 0.3em;
+.record-value {
+  width: 100%;
+  padding: 0.3em;
 }
 
 .record-controls {

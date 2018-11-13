@@ -1,6 +1,16 @@
 import Controller from '@ember/controller';
-import { reads } from '@ember/object/computed';
+import { sort } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
 
 export default Controller.extend({
-  airlines: reads('model'),
+  store: service(),
+
+  byAge: Object.freeze(['isNew:desc', 'id:desc']),
+  records: sort('model', 'byAge'),
+
+  actions: {
+    createButtonWasPressed() {
+      this.get('store').createRecord('airline');
+    },
+  },
 });

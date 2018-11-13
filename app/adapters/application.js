@@ -9,6 +9,6 @@ export default DS.JSONAPIAdapter.extend({
     hash.xhrFields = {
       withCredentials: true,
     };
-    return this._super(...arguments);
-  }
+    return this._super(url, method, hash);
+  },
 });

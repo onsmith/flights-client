@@ -1,5 +1,7 @@
 <main class="index-content">
-  <h1 class="text-center mt-2 mb-4">Resources</h1>
+  {{nav-links isShowingReturn=false class="clearfix"}}
+
+  <h1 class="text-center mb-4">Resources</h1>
 
   <ul class="resource-list">
     <li class="resource-item">
@@ -51,4 +53,11 @@
       {{/link-to}}
     </li>
   </ul>
+
+  <p class="text-center mt-4">
+    <button class="btn btn-danger btn-lg" {{action "clearDatabaseButtonWasPressed"}}>
+      <i class="fas fa-eraser"></i> &nbsp;
+      Erase Database
+    </button>
+  </p>
 </main>

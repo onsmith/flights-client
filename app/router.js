@@ -10,6 +10,7 @@ Router.map(function() {
   // Authentication
   this.route('signup');
   this.route('login');
+  this.route('logout');
 
   // Resources
   this.route('airlines');

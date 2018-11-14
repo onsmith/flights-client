@@ -1,0 +1,14 @@
+{{#if isShowingLogout}}
+  {{#link-to "logout" class="float-right"}}
+    Log Out &nbsp;
+    <i class="fas fa-sign-out-alt"></i>
+  {{/link-to}}
+{{/if}}
+
+
+{{#if isShowingReturn}}
+  {{#link-to "index"}}
+    <i class="fas fa-arrow-left"></i> &nbsp;
+    Return to All Resources
+  {{/link-to}}
+{{/if}}

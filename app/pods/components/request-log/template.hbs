@@ -7,9 +7,9 @@
     <h3 class="text-center mt-3">Request Log</h3>
 
     <div class="request-log-display">
-      {{#each messages as |message|}}
-        {{{message}}}
-      {{/each}}
+      {{#if isShowingDisplay}}
+        {{#code-block language="javascript"}}{{{contents}}}{{/code-block}}
+      {{/if}}
     </div>
 
     <div class="request-log-controls">

@@ -8,12 +8,28 @@ export default Component.extend({
   classNames: ['login-section'],
 
   ajax: service(),
+  dispatcher: service(),
 
   isSubmitting: false,
   isShowingSuccessMessage: false,
 
   errorMessage: '',
   isShowingErrorMessage: notEmpty('errorMessage'),
+
+  signupRequestText() {
+    return (
+`$.ajax({
+  url: '/users',
+  type: 'POST',
+  data: {
+    "user": {
+      "username": "${this.username}",
+      "password": "${this.password}"
+    }
+  },
+  xhrFields: { withCredentials: true }
+});`);
+  },
 
   signup(username, password) {
     return this.get('ajax').post('/users', {
@@ -33,6 +49,8 @@ export default Component.extend({
       this.set('isSubmitting', true);
       this.set('errorMessage', '');
       this.set('isShowingSuccessMessage', false);
+
+      this.get('dispatcher').trigger('request', this.signupRequestText());
 
       this.signup(this.username, this.password).then(() => {
         this.set('isShowingSuccessMessage', true);

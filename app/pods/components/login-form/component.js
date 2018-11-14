@@ -8,16 +8,34 @@ export default Component.extend({
   classNames: ['login-section'],
 
   session: service(),
+  dispatcher: service(),
 
   isSubmitting: false,
 
   errorMessage: '',
   hasErrorMessage: notEmpty('errorMessage'),
 
+  loginRequestText() {
+    return (
+`$.ajax({
+  url: '/sessions',
+  type: 'POST',
+  data: {
+    "user": {
+      "username": "${this.username}",
+      "password": "${this.password}"
+    }
+  },
+  xhrFields: { withCredentials: true }
+});`);
+  },
+
   actions: {
     loginFormWasSubmitted() {
       this.set('isSubmitting', true);
       this.set('errorMessage', '');
+
+      this.get('dispatcher').trigger('request', this.loginRequestText());
 
       this.get('session').authenticate(
         this.username,

@@ -5,6 +5,12 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
+
+    // Prism for syntax highlighting
+    'ember-prism': {
+      'theme': 'okaidia',
+      'components': ['javascript']
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated

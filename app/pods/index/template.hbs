@@ -1,30 +1,54 @@
 <main class="index-content">
-  <h1 class="text-center mt-2 mb-3">Resources</h1>
+  <h1 class="text-center mt-2 mb-4">Resources</h1>
 
   <ul class="resource-list">
     <li class="resource-item">
-      {{link-to "airlines" "airlines" class="resource-link"}}
+      {{#link-to "airlines" class="resource-link"}}
+        <span class="resource-icon"><i class="far fa-building"></i></span>
+        <span class="resource-name">airlines</span>
+      {{/link-to}}
     </li>
     <li class="resource-item">
-      {{link-to "airports" "airports" class="resource-link"}}
+      {{#link-to "airports" class="resource-link"}}
+        <span class="resource-icon"><i class="fas fa-map-marked"></i></span>
+        <span class="resource-name">airports</span>
+      {{/link-to}}
     </li>
     <li class="resource-item">
-      {{link-to "flights" "flights" class="resource-link"}}
+      {{#link-to "flights" class="resource-link"}}
+        <span class="resource-icon"><i class="fas fa-plane-departure"></i></span>
+        <span class="resource-name">flights</span>
+      {{/link-to}}
     </li>
     <li class="resource-item">
-      {{link-to "instances" "instances" class="resource-link"}}
+      {{#link-to "instances" class="resource-link"}}
+        <span class="resource-icon"><i class="far fa-calendar-alt"></i></span>
+        <span class="resource-name">instances</span>
+      {{/link-to}}
     </li>
     <li class="resource-item">
-      {{link-to "itineraries" "itineraries" class="resource-link"}}
+      {{#link-to "itineraries" class="resource-link"}}
+        <span class="resource-icon"><i class="fas fa-list-ul"></i></span>
+        <span class="resource-name">itineraries</span>
+      {{/link-to}}
     </li>
     <li class="resource-item">
-      {{link-to "planes" "planes" class="resource-link"}}
+      {{#link-to "planes" class="resource-link"}}
+        <span class="resource-icon"><i class="fas fa-plane"></i></span>
+        <span class="resource-name">planes</span>
+      {{/link-to}}
     </li>
     <li class="resource-item">
-      {{link-to "seats" "seats" class="resource-link"}}
+      {{#link-to "seats" class="resource-link"}}
+        <span class="resource-icon"><i class="fas fa-grip-vertical"></i></span>
+        <span class="resource-name">seats</span>
+      {{/link-to}}
     </li>
     <li class="resource-item">
-      {{link-to "tickets" "tickets" class="resource-link"}}
+      {{#link-to "tickets" class="resource-link"}}
+        <span class="resource-icon"><i class="fas fa-ticket-alt"></i></span>
+        <span class="resource-name">tickets</span>
+      {{/link-to}}
     </li>
   </ul>
 </main>

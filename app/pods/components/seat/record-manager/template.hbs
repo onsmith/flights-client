@@ -1,0 +1,88 @@
+{{#if isWriting}}
+  {{seat/record-form record
+    onSave=(action "saveButtonWasPressed")
+    onCancel=(action "cancelButtonWasPressed")
+  }}
+
+{{else}}
+  <table class="record-table">
+    <tbody>
+      <tr class="record-field">
+        <td class="record-key">id:</td>
+        <td class="record-value">{{record.id}}</td>
+      </tr>
+      <tr class="record-field">
+        <td class="record-key">plane_id:</td>
+        <td class="record-value">{{record.plane_id}}</td>
+      </tr>
+      <tr class="record-field">
+        <td class="record-key">row:</td>
+        <td class="record-value">{{record.row}}</td>
+      </tr>
+      <tr class="record-field">
+        <td class="record-key">number:</td>
+        <td class="record-value">"{{record.number}}"</td>
+      </tr>
+      <tr class="record-field">
+        <td class="record-key">cabin:</td>
+        <td class="record-value">"{{record.cabin}}"</td>
+      </tr>
+      <tr class="record-field">
+        <td class="record-key">is_window:</td>
+        <td class="record-value">
+          {{#if record.is_window}}
+            true
+          {{else}}
+            false
+          {{/if}}
+        </td>
+      </tr>
+      <tr class="record-field">
+        <td class="record-key">is_aisle:</td>
+        <td class="record-value">
+          {{#if record.is_aisle}}
+            true
+          {{else}}
+            false
+          {{/if}}
+        </td>
+      </tr>
+      <tr class="record-field">
+        <td class="record-key">is_exit:</td>
+        <td class="record-value">
+          {{#if record.is_exit}}
+            true
+          {{else}}
+            false
+          {{/if}}
+        </td>
+      </tr>
+      <tr class="record-field">
+        <td class="record-key">info:</td>
+        <td class="record-value">"{{record.info}}"</td>
+      </tr>
+      <tr class="record-field">
+        <td class="record-key">user_id:</td>
+        <td class="record-value">{{record.user_id}}</td>
+      </tr>
+      <tr class="record-field">
+        <td class="record-key">created_at:</td>
+        <td class="record-value">"{{record.created_at}}"</td>
+      </tr>
+      <tr class="record-field">
+        <td class="record-key">updated_at:</td>
+        <td class="record-value">"{{record.updated_at}}"</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="record-controls mt-3">
+    <button type="button" class="btn btn-primary" {{action "editButtonWasPressed"}}>
+      <i class="far fa-edit"></i>&nbsp; Edit
+    </button>
+
+    <button type="button" class="btn btn-danger" {{action "deleteButtonWasPressed"}}>
+      <i class="fas fa-times"></i>&nbsp; Delete
+    </button>
+  </p>
+{{/if}}

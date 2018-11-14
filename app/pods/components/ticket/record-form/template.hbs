@@ -7,74 +7,85 @@
       </tr>
     {{/unless}}
     <tr class="record-field">
-      <td class="record-key">departs_at:</td>
+      <td class="record-key">first_name:</td>
       <td class="record-value">
-        {{time-picker record.departs_at}}
+        {{input value=record.first_name class="form-control"}}
       </td>
     </tr>
     <tr class="record-field">
-      <td class="record-key">arrives_at:</td>
+      <td class="record-key">middle_name:</td>
       <td class="record-value">
-        {{time-picker record.arrives_at}}
+        {{input value=record.middle_name class="form-control"}}
       </td>
     </tr>
     <tr class="record-field">
-      <td class="record-key">number:</td>
+      <td class="record-key">last_name:</td>
       <td class="record-value">
-        {{input class="form-control" value=record.number}}
+        {{input value=record.last_name class="form-control"}}
       </td>
     </tr>
     <tr class="record-field">
-      <td class="record-key">plane_id:</td>
+      <td class="record-key">age:</td>
       <td class="record-value form-inline">
-        {{#x-select value=record.plane_id on-change=(action (mut record.plane_id)) class="form-control" as |xs|}}
+        {{input type="number" value=record.age class="form-control"}}
+      </td>
+    </tr>
+    <tr class="record-field">
+      <td class="record-key">gender:</td>
+      <td class="record-value">
+        {{input value=record.gender class="form-control"}}
+      </td>
+    </tr>
+    <tr class="record-field">
+      <td class="record-key">is_purchased:</td>
+      <td class="record-value">
+        <div class="form-check">
+          {{#radio-button value=true groupValue=record.is_purchased}}
+            true
+          {{/radio-button}}
+        </div>
+        <div class="form-check">
+          {{#radio-button value=false groupValue=record.is_purchased}}
+            false
+          {{/radio-button}}
+        </div>
+      </td>
+    </tr>
+    <tr class="record-field">
+      <td class="record-key">price_paid:</td>
+      <td class="record-value">
+        {{input value=record.price_paid class="form-control"}}
+      </td>
+    </tr>
+    <tr class="record-field">
+      <td class="record-key">instance_id:</td>
+      <td class="record-value form-inline">
+        {{#x-select value=record.instance_id on-change=(action (mut record.instance_id)) class="form-control" as |xs|}}
           {{#xs.option value=null}}none selected{{/xs.option}}
-          {{#each planes as |p|}}
-            {{#xs.option value=p.intid}}{{p.name}} (id: {{p.id}}){{/xs.option}}
+          {{#each instances as |p|}}
+            {{#xs.option value=p.intid}}{{p.flight.number}} {{p.date}} (id: {{p.id}}){{/xs.option}}
           {{/each}}
         {{/x-select}}
       </td>
     </tr>
     <tr class="record-field">
-      <td class="record-key">departure_id:</td>
+      <td class="record-key">itinerary_id:</td>
       <td class="record-value form-inline">
-        {{#x-select value=record.departure_id on-change=(action (mut record.departure_id)) class="form-control" as |xs|}}
+        {{#x-select value=record.itinerary_id on-change=(action (mut record.itinerary_id)) class="form-control" as |xs|}}
           {{#xs.option value=null}}none selected{{/xs.option}}
-          {{#each airports as |p|}}
-            {{#xs.option value=p.intid}}{{p.name}} (id: {{p.id}}){{/xs.option}}
+          {{#each itineraries as |p|}}
+            {{#xs.option value=p.intid}}{{p.email}} (id: {{p.id}}){{/xs.option}}
           {{/each}}
         {{/x-select}}
       </td>
     </tr>
     <tr class="record-field">
-      <td class="record-key">arrival_id:</td>
+      <td class="record-key">seat_id:</td>
       <td class="record-value form-inline">
-        {{#x-select value=record.arrival_id on-change=(action (mut record.arrival_id)) class="form-control" as |xs|}}
+        {{#x-select value=record.seat_id on-change=(action (mut record.seat_id)) class="form-control" as |xs|}}
           {{#xs.option value=null}}none selected{{/xs.option}}
-          {{#each airports as |p|}}
-            {{#xs.option value=p.intid}}{{p.name}} (id: {{p.id}}){{/xs.option}}
-          {{/each}}
-        {{/x-select}}
-      </td>
-    </tr>
-    <tr class="record-field">
-      <td class="record-key">next_flight_id:</td>
-      <td class="record-value form-inline">
-        {{#x-select value=record.next_flight_id on-change=(action (mut record.next_flight_id)) class="form-control" as |xs|}}
-          {{#xs.option value=null}}none selected{{/xs.option}}
-          {{#each flights as |p|}}
-            {{#xs.option value=p.intid}}{{p.name}} (id: {{p.id}}){{/xs.option}}
-          {{/each}}
-        {{/x-select}}
-      </td>
-    </tr>
-    <tr class="record-field">
-      <td class="record-key">airline_id:</td>
-      <td class="record-value form-inline">
-        {{#x-select value=record.airline_id on-change=(action (mut record.airline_id)) class="form-control" as |xs|}}
-          {{#xs.option value=null}}none selected{{/xs.option}}
-          {{#each airlines as |p|}}
-            {{#xs.option value=p.intid}}{{p.name}} (id: {{p.id}}){{/xs.option}}
+          {{#each seats as |p|}}
+            {{#xs.option value=p.intid}}{{p.row}}{{p.number}} (id: {{p.id}}){{/xs.option}}
           {{/each}}
         {{/x-select}}
       </td>

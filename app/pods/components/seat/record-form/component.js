@@ -13,21 +13,6 @@ const MyComponent = Component.extend({
     return this.get('store').findAll('plane');
   }),
 
-  airports: computed(
-  function() {
-    return this.get('store').findAll('airport');
-  }),
-
-  flights: computed(
-  function() {
-    return this.get('store').findAll('flight');
-  }),
-
-  airlines: computed(
-  function() {
-    return this.get('store').findAll('airline');
-  }),
-
   actions: {
     saveButtonWasPressed() {
       if (this.onSave) {

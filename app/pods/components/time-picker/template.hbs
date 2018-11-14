@@ -1,0 +1,16 @@
+{{#x-select value=hour on-change=(action "hourWasUpdated") class="form-control" as |xs|}}
+  {{#each hours as |h|}}
+    {{#xs.option value=h}}{{h}}{{/xs.option}}
+  {{/each}}
+{{/x-select}}
+
+{{#x-select value=minute on-change=(action "minuteWasUpdated") class="form-control" as |xs|}}
+  {{#each minutes as |m|}}
+    {{#xs.option value=m}}{{m}}{{/xs.option}}
+  {{/each}}
+{{/x-select}}
+
+{{#x-select value=period on-change=(action "periodWasUpdated") class="form-control" as |xs|}}
+  {{#xs.option value="am"}}am{{/xs.option}}
+  {{#xs.option value="pm"}}pm{{/xs.option}}
+{{/x-select}}

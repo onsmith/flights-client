@@ -2,7 +2,7 @@ import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 
 export default Route.extend({
-  store:   service(),
+  store: service(),
   session: service(),
 
   beforeModel() {
@@ -14,6 +14,6 @@ export default Route.extend({
   },
 
   model() {
-    return this.store.findAll('airport');
+    return this.store.findAll('seat');
   },
 });

@@ -5,8 +5,10 @@ export default Route.extend({
   session: service(),
 
   beforeModel() {
-    if (!this.get('session.isAuthenticated')) {
-      this.transitionTo('login');
-    }
+    return this.get('session.isAuthenticatedPromise').then(data => {
+      if (!data.is_authenticated) {
+        this.transitionTo('login');
+      }
+    });
   },
 });

@@ -11,6 +11,17 @@ export default DS.Model.extend({
   created_at:   DS.attr('string'),
   updated_at:   DS.attr('string'),
 
+  flight: computed(
+    'flight_id',
+  function() {
+    const flight_id = this.get('flight_id');
+    if (flight_id) {
+      return this.store.findRecord('flight', flight_id);
+    } else {
+      return null;
+    }
+  }),
+
   intid: computed(
     'id',
   function() {

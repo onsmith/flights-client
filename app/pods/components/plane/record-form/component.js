@@ -8,21 +8,6 @@ const MyComponent = Component.extend({
 
   store: service(),
 
-  planes: computed(
-  function() {
-    return this.get('store').findAll('plane');
-  }),
-
-  airports: computed(
-  function() {
-    return this.get('store').findAll('airport');
-  }),
-
-  flights: computed(
-  function() {
-    return this.get('store').findAll('flight');
-  }),
-
   airlines: computed(
   function() {
     return this.get('store').findAll('airline');

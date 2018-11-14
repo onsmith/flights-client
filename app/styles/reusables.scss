@@ -3,13 +3,16 @@
 }
 
 .content-card {
-  box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.15);
-
-  margin: 1em;
-  padding: 1em;
-
   background-color: white;
   overflow: hidden;
+
+  padding: 1em;
+
+  /* Non-mobile layout */
+  @media(min-width: 50em) and (min-height: 40em) {
+    box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.15);
+    margin: 1em;
+  }
 }
 
 .full-page-max-width {

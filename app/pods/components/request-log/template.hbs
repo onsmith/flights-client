@@ -1,0 +1,29 @@
+{{#if isShowingRequestLogPanel}}
+  <div class="request-log-panel">
+    <button class="request-log-close-button" {{action "closeButtonWasPressed"}}>
+      <i class="fas fa-times"></i>
+    </button>
+
+    <h3 class="text-center mt-3">Request Log</h3>
+
+    <div class="request-log-display">
+      {{#each messages as |message|}}
+        {{{message}}}
+      {{/each}}
+    </div>
+
+    <div class="request-log-controls">
+      <button class="request-log-clear-button btn btn-warning btn-sm" {{action "clearButtonWasPressed"}}>
+        Clear Log
+      </button>
+    </div>
+  </div>
+
+
+{{else}}
+  <p class="action-button-wrapper">
+    <button type="button" class="action-button" {{action "actionButtonWasPressed"}}>
+      <i class="fas fa-history"></i>
+    </button>
+  </p>
+{{/if}}

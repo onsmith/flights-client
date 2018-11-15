@@ -4,6 +4,7 @@ import { inject as service } from '@ember/service';
 export default Route.extend({
   store: service(),
   session: service(),
+  dispatcher: service(),
 
   beforeModel() {
     return this.get('session.isAuthenticatedPromise').then(data => {
@@ -14,6 +15,17 @@ export default Route.extend({
   },
 
   model() {
+    this.get('dispatcher').trigger('request', this.indexRequestText());
     return this.store.findAll('instance');
+  },
+
+  indexRequestText() {
+    return (
+`$.ajax({
+  url: '/instances',
+  type: 'GET',
+  xhrFields: { withCredentials: true }
+});`
+    );
   },
 });

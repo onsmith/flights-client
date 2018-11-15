@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'flights-client',
     podModulePrefix: 'flights-client/pods',
     environment,
-    rootURL: '/',
+    rootURL: '/client/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {

@@ -2,9 +2,9 @@ import DS from 'ember-data';
 import { computed } from '@ember/object';
 
 export default DS.Model.extend({
-  departs_at:     DS.attr('string', { defaultValue: "" }), // required
-  arrives_at:     DS.attr('string', { defaultValue: "" }), // required
-  number:         DS.attr('string', { defaultValue: "" }), // required
+  departs_at:     DS.attr('string'), // required
+  arrives_at:     DS.attr('string'), // required
+  number:         DS.attr('string'), // required
   plane_id:       DS.attr('number'),
   departure_id:   DS.attr('number'), // required
   arrival_id:     DS.attr('number'), // required

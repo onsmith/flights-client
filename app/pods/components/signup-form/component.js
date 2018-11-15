@@ -23,8 +23,8 @@ export default Component.extend({
   type: 'POST',
   data: {
     "user": {
-      "username": "${this.username}",
-      "password": "${this.password}"
+      "username": ${JSON.stringify(this.username)},
+      "password": ${JSON.stringify(this.password)}
     }
   },
   xhrFields: { withCredentials: true }

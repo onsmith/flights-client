@@ -2,7 +2,7 @@ import DS from 'ember-data';
 import { computed } from '@ember/object';
 
 export default DS.Model.extend({
-  name:       DS.attr('string', { defaultValue: ""   }), // required
+  name:       DS.attr('string'), // required
   logo_url:   DS.attr('string'),
 
   info:       DS.attr('string'),

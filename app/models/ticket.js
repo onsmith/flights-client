@@ -2,18 +2,18 @@ import DS from 'ember-data';
 import { computed } from '@ember/object';
 
 export default DS.Model.extend({
-  first_name:   DS.attr('string', { defaultValue: "" }), // required
-  middle_name:  DS.attr('string', { defaultValue: "" }),
-  last_name:    DS.attr('string', { defaultValue: "" }), // required
+  first_name:   DS.attr('string'), // required
+  middle_name:  DS.attr('string'),
+  last_name:    DS.attr('string'), // required
   age:          DS.attr('number'), // required
-  gender:       DS.attr('string', { defaultValue: "" }), // required
+  gender:       DS.attr('string'), // required
   is_purchased: DS.attr('boolean'),
-  price_paid:   DS.attr('number', { defaultValue: "" }),
-  instance_id:  DS.attr('number', { defaultValue: "" }), // required
-  itinerary_id: DS.attr('number', { defaultValue: "" }),
-  seat_id:      DS.attr('number', { defaultValue: "" }), // required
+  price_paid:   DS.attr('number'),
+  instance_id:  DS.attr('number'), // required
+  itinerary_id: DS.attr('number'),
+  seat_id:      DS.attr('number'), // required
 
-  info:         DS.attr('string', { defaultValue: "" }),
+  info:         DS.attr('string'),
   user_id:      DS.attr('number'),
   created_at:   DS.attr('string'),
   updated_at:   DS.attr('string'),

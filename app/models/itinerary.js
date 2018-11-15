@@ -23,9 +23,9 @@ export default DS.Model.extend({
   type: 'POST',
   data: {
     "itinerary": {
-      "confirmation_code": "${this.get('confirmation_code')}",
-      "email":             "${this.get('email')}",
-      "info":              "${this.get('info')}"
+      "confirmation_code": ${JSON.stringify(this.get('confirmation_code'))},
+      "email":             ${JSON.stringify(this.get('email'))},
+      "info":              ${JSON.stringify(this.get('info'))}
     }
   },
   xhrFields: { withCredentials: true }
@@ -40,9 +40,9 @@ export default DS.Model.extend({
   type: 'PUT',
   data: {
     "itinerary": {
-      "confirmation_code": "${this.get('confirmation_code')}",
-      "email":             "${this.get('email')}",
-      "info":              "${this.get('info')}"
+      "confirmation_code": ${JSON.stringify(this.get('confirmation_code'))},
+      "email":             ${JSON.stringify(this.get('email'))},
+      "info":              ${JSON.stringify(this.get('info'))}
     }
   },
   xhrFields: { withCredentials: true }

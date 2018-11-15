@@ -2,15 +2,15 @@ import DS from 'ember-data';
 import { computed } from '@ember/object';
 
 export default DS.Model.extend({
-  name:       DS.attr('string', { defaultValue: "" }), // required
-  code:       DS.attr('string', { defaultValue: "" }), // required
-  longitude:  DS.attr('string', { defaultValue: "" }),
-  latitude:   DS.attr('string', { defaultValue: "" }),
-  city:       DS.attr('string', { defaultValue: "" }),
-  state:      DS.attr('string', { defaultValue: "" }),
-  city_url:   DS.attr('string', { defaultValue: "" }),
+  name:       DS.attr('string', { defaultValue: ""   }), // required
+  code:       DS.attr('string', { defaultValue: ""   }), // required
+  longitude:  DS.attr('string', { defaultValue: null }),
+  latitude:   DS.attr('string', { defaultValue: null }),
+  city:       DS.attr('string', { defaultValue: null }),
+  state:      DS.attr('string', { defaultValue: null }),
+  city_url:   DS.attr('string', { defaultValue: null }),
 
-  info:       DS.attr('string', { defaultValue: "" }),
+  info:       DS.attr('string', { defaultValue: null }),
   user_id:    DS.attr('number'),
   created_at: DS.attr('string'),
   updated_at: DS.attr('string'),
@@ -28,14 +28,14 @@ export default DS.Model.extend({
   type: 'POST',
   data: {
     "airport": {
-      "name":      "${this.get('name')}",
-      "code":      "${this.get('code')}",
-      "latitude":  "${this.get('latitude')}",
-      "longitude": "${this.get('longitude')}",
-      "city":      "${this.get('city')}",
-      "state":     "${this.get('state')}",
-      "city_url":  "${this.get('city_url')}",
-      "info":      "${this.get('info')}"
+      "name":      ${JSON.stringify(this.get('name'))},
+      "code":      ${JSON.stringify(this.get('code'))},
+      "latitude":  ${JSON.stringify(this.get('latitude'))},
+      "longitude": ${JSON.stringify(this.get('longitude'))},
+      "city":      ${JSON.stringify(this.get('city'))},
+      "state":     ${JSON.stringify(this.get('state'))},
+      "city_url":  ${JSON.stringify(this.get('city_url'))},
+      "info":      ${JSON.stringify(this.get('info'))}
     }
   },
   xhrFields: { withCredentials: true }
@@ -50,14 +50,14 @@ export default DS.Model.extend({
   type: 'PUT',
   data: {
     "airport": {
-      "name":      "${this.get('name')}",
-      "code":      "${this.get('code')}",
-      "latitude":  "${this.get('latitude')}",
-      "longitude": "${this.get('longitude')}",
-      "city":      "${this.get('city')}",
-      "state":     "${this.get('state')}",
-      "city_url":  "${this.get('city_url')}",
-      "info":      "${this.get('info')}"
+      "name":      ${JSON.stringify(this.get('name'))},
+      "code":      ${JSON.stringify(this.get('code'))},
+      "latitude":  ${JSON.stringify(this.get('latitude'))},
+      "longitude": ${JSON.stringify(this.get('longitude'))},
+      "city":      ${JSON.stringify(this.get('city'))},
+      "state":     ${JSON.stringify(this.get('state'))},
+      "city_url":  ${JSON.stringify(this.get('city_url'))},
+      "info":      ${JSON.stringify(this.get('info'))}
     }
   },
   xhrFields: { withCredentials: true }

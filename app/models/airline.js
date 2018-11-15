@@ -2,10 +2,10 @@ import DS from 'ember-data';
 import { computed } from '@ember/object';
 
 export default DS.Model.extend({
-  name:       DS.attr('string', { defaultValue: "" }), // required
-  logo_url:   DS.attr('string', { defaultValue: "" }),
+  name:       DS.attr('string', { defaultValue: ""   }), // required
+  logo_url:   DS.attr('string'),
 
-  info:       DS.attr('string', { defaultValue: "" }),
+  info:       DS.attr('string'),
   user_id:    DS.attr('number'),
   created_at: DS.attr('string'),
   updated_at: DS.attr('string'),
@@ -23,9 +23,9 @@ export default DS.Model.extend({
   type: 'POST',
   data: {
     "airline": {
-      "name":     "${this.get('name')}",
-      "logo_url": "${this.get('logo_url')}",
-      "info":     "${this.get('info')}"
+      "name":     ${JSON.stringify(this.get('name'))},
+      "logo_url": ${JSON.stringify(this.get('logo_url'))},
+      "info":     ${JSON.stringify(this.get('info'))}
     }
   },
   xhrFields: { withCredentials: true }
@@ -40,9 +40,9 @@ export default DS.Model.extend({
   type: 'PUT',
   data: {
     "airline": {
-      "name":     "${this.get('name')}",
-      "logo_url": "${this.get('logo_url')}",
-      "info":     "${this.get('info')}"
+      "name":     ${JSON.stringify(this.get('name'))},
+      "logo_url": ${JSON.stringify(this.get('logo_url'))},
+      "info":     ${JSON.stringify(this.get('info'))}
     }
   },
   xhrFields: { withCredentials: true }

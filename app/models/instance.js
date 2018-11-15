@@ -35,10 +35,10 @@ export default DS.Model.extend({
   type: 'POST',
   data: {
     "instance": {
-      "flight_id":    ${this.get('flight_id')},
-      "date":         "${this.get('date')}",
-      "is_cancelled": ${this.get('is_cancelled') ? 'true' : 'false'},
-      "info":         "${this.get('info')}"
+      "flight_id":    ${JSON.stringify(this.get('flight_id'))},
+      "date":         ${JSON.stringify(this.get('date'))},
+      "is_cancelled": ${JSON.stringify(this.get('is_cancelled'))},
+      "info":         ${JSON.stringify(this.get('info'))}
     }
   },
   xhrFields: { withCredentials: true }
@@ -53,10 +53,10 @@ export default DS.Model.extend({
   type: 'PUT',
   data: {
     "instance": {
-      "flight_id":    ${this.get('flight_id')},
-      "date":         "${this.get('date')}",
-      "is_cancelled": ${this.get('is_cancelled') ? 'true' : 'false'},
-      "info":         "${this.get('info')}"
+      "flight_id":    ${JSON.stringify(this.get('flight_id'))},
+      "date":         ${JSON.stringify(this.get('date'))},
+      "is_cancelled": ${JSON.stringify(this.get('is_cancelled'))},
+      "info":         ${JSON.stringify(this.get('info'))}
     }
   },
   xhrFields: { withCredentials: true }

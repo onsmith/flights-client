@@ -11,7 +11,7 @@ export default DS.Model.extend({
   next_flight_id: DS.attr('number'),
   airline_id:     DS.attr('number'),
 
-  info:           DS.attr('string', { defaultValue: "" }),
+  info:           DS.attr('string'),
   user_id:        DS.attr('number'),
   created_at:     DS.attr('string'),
   updated_at:     DS.attr('string'),
@@ -35,15 +35,15 @@ export default DS.Model.extend({
   type: 'POST',
   data: {
     "flight": {
-      "departs_at":     "${this.get('departs_at')}",
-      "arrives_at":     "${this.get('arrives_at')}",
-      "number":         "${this.get('number')}",
-      "plane_id":       ${this.get('plane_id')},
-      "departure_id":   ${this.get('departure_id')},
-      "arrival_id":     ${this.get('arrival_id')},
-      "next_flight_id": ${this.get('next_flight_id')},
-      "airline_id":     ${this.get('airline_id')},
-      "info":           "${this.get('info')}"
+      "departs_at":     ${JSON.stringify(this.get('departs_at'))},
+      "arrives_at":     ${JSON.stringify(this.get('arrives_at'))},
+      "number":         ${JSON.stringify(this.get('number'))},
+      "plane_id":       ${JSON.stringify(this.get('plane_id'))},
+      "departure_id":   ${JSON.stringify(this.get('departure_id'))},
+      "arrival_id":     ${JSON.stringify(this.get('arrival_id'))},
+      "next_flight_id": ${JSON.stringify(this.get('next_flight_id'))},
+      "airline_id":     ${JSON.stringify(this.get('airline_id'))},
+      "info":           ${JSON.stringify(this.get('info'))}
     }
   },
   xhrFields: { withCredentials: true }
@@ -58,15 +58,15 @@ export default DS.Model.extend({
   type: 'PUT',
   data: {
     "flight": {
-      "departs_at":     "${this.get('departs_at')}",
-      "arrives_at":     "${this.get('arrives_at')}",
-      "number":         "${this.get('number')}",
-      "plane_id":       ${this.get('plane_id')},
-      "departure_id":   ${this.get('departure_id')},
-      "arrival_id":     ${this.get('arrival_id')},
-      "next_flight_id": ${this.get('next_flight_id')},
-      "airline_id":     ${this.get('airline_id')},
-      "info":           "${this.get('info')}"
+      "departs_at":     ${JSON.stringify(this.get('departs_at'))},
+      "arrives_at":     ${JSON.stringify(this.get('arrives_at'))},
+      "number":         ${JSON.stringify(this.get('number'))},
+      "plane_id":       ${JSON.stringify(this.get('plane_id'))},
+      "departure_id":   ${JSON.stringify(this.get('departure_id'))},
+      "arrival_id":     ${JSON.stringify(this.get('arrival_id'))},
+      "next_flight_id": ${JSON.stringify(this.get('next_flight_id'))},
+      "airline_id":     ${JSON.stringify(this.get('airline_id'))},
+      "info":           ${JSON.stringify(this.get('info'))}
     }
   },
   xhrFields: { withCredentials: true }

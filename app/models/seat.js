@@ -28,14 +28,14 @@ export default DS.Model.extend({
   type: 'POST',
   data: {
     "seat": {
-      "plane_id":  ${this.get('plane_id')},
-      "row":       "${this.get('row')}",
-      "number":    "${this.get('number')}",
-      "cabin":     "${this.get('cabin')}",
-      "is_window": ${this.get('is_window') ? 'true' : 'false'},
-      "is_aisle":  ${this.get('is_aisle') ? 'true' : 'false'},
-      "is_exit":   ${this.get('is_exit') ? 'true' : 'false'},
-      "info":      "${this.get('info')}"
+      "plane_id":  ${JSON.stringify(this.get('plane_id'))},
+      "row":       ${JSON.stringify(this.get('row'))},
+      "number":    ${JSON.stringify(this.get('number'))},
+      "cabin":     ${JSON.stringify(this.get('cabin'))},
+      "is_window": ${JSON.stringify(this.get('is_window'))},
+      "is_aisle":  ${JSON.stringify(this.get('is_aisle'))},
+      "is_exit":   ${JSON.stringify(this.get('is_exit'))},
+      "info":      ${JSON.stringify(this.get('info'))}
     }
   },
   xhrFields: { withCredentials: true }
@@ -50,14 +50,14 @@ export default DS.Model.extend({
   type: 'PUT',
   data: {
     "seat": {
-      "plane_id":  ${this.get('plane_id')},
-      "row":       "${this.get('row')}",
-      "number":    "${this.get('number')}",
-      "cabin":     "${this.get('cabin')}",
-      "is_window": ${this.get('is_window') ? 'true' : 'false'},
-      "is_aisle":  ${this.get('is_aisle') ? 'true' : 'false'},
-      "is_exit":   ${this.get('is_exit') ? 'true' : 'false'},
-      "info":      "${this.get('info')}"
+      "plane_id":  ${JSON.stringify(this.get('plane_id'))},
+      "row":       ${JSON.stringify(this.get('row'))},
+      "number":    ${JSON.stringify(this.get('number'))},
+      "cabin":     ${JSON.stringify(this.get('cabin'))},
+      "is_window": ${JSON.stringify(this.get('is_window'))},
+      "is_aisle":  ${JSON.stringify(this.get('is_aisle'))},
+      "is_exit":   ${JSON.stringify(this.get('is_exit'))},
+      "info":      ${JSON.stringify(this.get('info'))}
     }
   },
   xhrFields: { withCredentials: true }

@@ -31,17 +31,17 @@ export default DS.Model.extend({
   type: 'POST',
   data: {
     "ticket": {
-      "first_name":   "${this.get('first_name')}",
-      "middle_name":  "${this.get('middle_name')}",
-      "last_name":    "${this.get('last_name')}",
-      "age":          ${this.get('age')},
-      "gender":       "${this.get('gender')}",
-      "is_purchased": ${this.get('is_purchased') ? 'true' : 'false'},
-      "price_paid":   "${this.get('price_paid')}",
-      "instance_id":  ${this.get('instance_id')},
-      "itinerary_id": ${this.get('itinerary_id')},
-      "seat_id":      ${this.get('seat_id')},
-      "info":         "${this.get('info')}"
+      "first_name":   ${JSON.stringify(this.get('first_name'))},
+      "middle_name":  ${JSON.stringify(this.get('middle_name'))},
+      "last_name":    ${JSON.stringify(this.get('last_name'))},
+      "age":          ${JSON.stringify(this.get('age'))},
+      "gender":       ${JSON.stringify(this.get('gender'))},
+      "is_purchased": ${JSON.stringify(this.get('is_purchased'))},
+      "price_paid":   ${JSON.stringify(this.get('price_paid'))},
+      "instance_id":  ${JSON.stringify(this.get('instance_id'))},
+      "itinerary_id": ${JSON.stringify(this.get('itinerary_id'))},
+      "seat_id":      ${JSON.stringify(this.get('seat_id'))},
+      "info":         ${JSON.stringify(this.get('info'))}
     }
   },
   xhrFields: { withCredentials: true }
@@ -56,17 +56,17 @@ export default DS.Model.extend({
   type: 'PUT',
   data: {
     "ticket": {
-      "first_name":   "${this.get('first_name')}",
-      "middle_name":  "${this.get('middle_name')}",
-      "last_name":    "${this.get('last_name')}",
-      "age":          ${this.get('age')},
-      "gender":       "${this.get('gender')}",
-      "is_purchased": ${this.get('is_purchased') ? 'true' : 'false'},
-      "price_paid":   "${this.get('price_paid')}",
-      "instance_id":  ${this.get('instance_id')},
-      "itinerary_id": ${this.get('itinerary_id')},
-      "seat_id":      ${this.get('seat_id')},
-      "info":         "${this.get('info')}"
+      "first_name":   ${JSON.stringify(this.get('first_name'))},
+      "middle_name":  ${JSON.stringify(this.get('middle_name'))},
+      "last_name":    ${JSON.stringify(this.get('last_name'))},
+      "age":          ${JSON.stringify(this.get('age'))},
+      "gender":       ${JSON.stringify(this.get('gender'))},
+      "is_purchased": ${JSON.stringify(this.get('is_purchased'))},
+      "price_paid":   ${JSON.stringify(this.get('price_paid'))},
+      "instance_id":  ${JSON.stringify(this.get('instance_id'))},
+      "itinerary_id": ${JSON.stringify(this.get('itinerary_id'))},
+      "seat_id":      ${JSON.stringify(this.get('seat_id'))},
+      "info":         ${JSON.stringify(this.get('info'))}
     }
   },
   xhrFields: { withCredentials: true }

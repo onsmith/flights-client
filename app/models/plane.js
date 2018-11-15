@@ -24,10 +24,10 @@ export default DS.Model.extend({
   type: 'POST',
   data: {
     "plane": {
-      "name":        "${this.get('name')}",
-      "seatmap_url": "${this.get('seatmap_url')}",
-      "airline_id":  ${this.get('airline_id')},
-      "info":        "${this.get('info')}"
+      "name":        ${JSON.stringify(this.get('name'))},
+      "seatmap_url": ${JSON.stringify(this.get('seatmap_url'))},
+      "airline_id":  ${JSON.stringify(this.get('airline_id'))},
+      "info":        ${JSON.stringify(this.get('info'))}
     }
   },
   xhrFields: { withCredentials: true }
@@ -42,10 +42,10 @@ export default DS.Model.extend({
   type: 'PUT',
   data: {
     "plane": {
-      "name":        "${this.get('name')}",
-      "seatmap_url": "${this.get('seatmap_url')}",
-      "airline_id":  ${this.get('airline_id')},
-      "info":        "${this.get('info')}"
+      "name":        ${JSON.stringify(this.get('name'))},
+      "seatmap_url": ${JSON.stringify(this.get('seatmap_url'))},
+      "airline_id":  ${JSON.stringify(this.get('airline_id'))},
+      "info":        ${JSON.stringify(this.get('info'))}
     }
   },
   xhrFields: { withCredentials: true }

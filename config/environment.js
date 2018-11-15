@@ -47,7 +47,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
-    ENV.host = '/';
+    ENV.host = 'http://comp426.cs.unc.edu:3001';
   }
 
   return ENV;

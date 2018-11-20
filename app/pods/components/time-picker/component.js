@@ -1,4 +1,5 @@
 import Component from '@ember/component';
+import { next } from '@ember/runloop';
 
 const regex = /^\s*(\d\d?):(\d\d)\s*([ap]m)\s*$/i;
 
@@ -16,6 +17,10 @@ const MyComponent = Component.extend({
       this.set('hour',   matches[1]);
       this.set('minute', matches[2]);
       this.set('period', matches[3]);
+    } else {
+      next(this, function() {
+        this.set('time', this.getTime());
+      });
     }
   },
 
